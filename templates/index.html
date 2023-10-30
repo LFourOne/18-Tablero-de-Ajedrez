@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="style.css") }}">
+    <title>Tablero de Ajedrez</title>
+</head>
+<body>
+
+    <h1> *** Checkerboard *** </h1>
+    <div class="tablero">
+        {% for x in range (0, numy) %}
+            <div class="fila">
+                {% for i in range (0, numx) %}
+                <div class="cuadrado1" style="background-color: {{ color1 }}"></div>
+                <div class="cuadrado2" style="background-color: {{ color2 }}"></div>
+                {% endfor %}
+            </div>
+            <div class="fila">
+                {% for j in range (0, numx) %}
+                <div class="cuadrado2" style="background-color: {{ color2 }}"></div>
+                <div class="cuadrado1" style="background-color: {{ color1 }}"></div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>
